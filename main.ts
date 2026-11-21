@@ -4,6 +4,10 @@
 // /output/answers.json: a JSON array of the answers, one per case and in
 // the cases' order. Outside a container MAKEFUN_INPUT_DIR and
 // MAKEFUN_OUTPUT_DIR stand in for /input and /output.
+//
+// Contract: each case is answered alone, in order, with nothing shared
+// between cases — run() keeps no state from one call to the next — so the
+// two executions the grader runs produce byte-identical outputs.
 
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
